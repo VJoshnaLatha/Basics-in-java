@@ -1,0 +1,61 @@
+Maximum element in a column
+In a family, the people are arranged in rows and columns. Male persons in the families are arranged in a row and females are arranged in a column. Find the eldest women in each column. (Write a program to find the maximum element in each column of the matrix.)
+Input Format:
+The first integer corresponds to m, the number of rows in the matrix and the second integer corresponds to n, the number of columns in the matrix. 
+The remaining integers correspond to the elements in the matrix. 
+The elements are read in row-wise order, the first row first, then second row and so on. 
+Output Format:
+Output consists of an maximum elements in the each column.
+Sample Input:
+3
+3
+1 2 9
+8 2 1
+4 1 1
+Sample Output:
+8
+2
+9
+
+
+import java.util.*;
+public class Maximum 
+{
+  public static void main(String[] args) 
+  {
+    int row,col;
+    Scanner sc=new Scanner(System.in);
+    row=sc.nextInt(); 
+    col=sc.nextInt(); 
+    int matrix[][]=new int[col][row];
+    for (int i=0;i<col;i++) 
+    {
+      for (int j=0;j<row;j++) 
+      {
+        matrix[j][i]=sc.nextInt();
+      }
+    }
+    System.out.println();
+    findMaxEachCol(matrix);
+  }
+  private static void findMaxEachCol(int matrix[][])
+  { 
+    int result[]=new int[matrix.length];
+    for (int j=0;j<matrix.length;j++)
+    {
+      int maxNum=matrix[0][j];
+      for (int i=0;i<matrix[j].length;i++)
+      {
+        if(maxNum<matrix[i][j])
+        {
+          maxNum=matrix[i][j];
+        }
+        result[i]=maxNum;
+      }     
+    }
+    for (int j=0;j<result.length;j++)
+    {
+      System.out.println(+ result[j]);
+    }
+  }
+}
