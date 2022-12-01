@@ -1,0 +1,55 @@
+Matrix Substraction
+write a program to perform matrix subtraction using 2D 
+Input Format:
+Input consists of 2 integers and 2 matrix.
+First input consists of a row.
+Second input consists of a column
+Third give the elements of the first matrix.
+Fourth give the elements of the second matrix.
+Output Format:
+Output consists of 1 matrix
+output consists of a substraction of a matrix
+Sample Input:
+2
+2
+1 5
+9 4
+1 1
+1 1
+Sample Output:
+0 -4
+-8 -3
+
+
+import java.util.*;
+public class Matsub
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int n[][]=new int[a][b];
+        int m[][]=new int[a][b];
+        int i,j;
+        for(i=0;i<a;i++)
+            for(j=0;j<b;j++)
+                n[i][j]=sc.nextInt();
+        for( i=0;i<a;i++)
+            for( j=0;j<b;j++)
+                m[i][j]=sc.nextInt();
+        for( i=0;i<a;i++)
+            for( j=0;j<b;j++)
+                n[i][j]=m[i][j]-n[i][j];
+        for( i=0;i<a;i++)
+        {
+            for( j=0;j<b;j++)
+            {
+               System.out.printf("%d ",n[i][j]);
+                
+            }
+               System.out.println();
+            
+        }
+    }
+}
