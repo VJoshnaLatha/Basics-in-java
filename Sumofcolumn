@@ -1,0 +1,48 @@
+Sum of each elements in a column
+Write a  program to find the sum of elements in each column
+INPUT & OUTPUT FORMAT: 
+Input consists of 2 integers and 1 2D-array. 
+Integers correspond to the size of rows and columns.
+Output consists of the addition of  elements in each columns
+Sample Input:
+3
+3
+3 5 1
+7 3 2
+0 54 2
+Sample Output:
+10
+62
+5
+
+
+import java.util.*;
+public class Sumofcolumn
+{
+	
+	public static void main(String[] args) 
+	{
+		int i,j,sum;	
+		int rows,columns;
+		Scanner sc=new Scanner(System.in);
+		rows=sc.nextInt();
+		columns=sc.nextInt();
+		int[][] SumOfCols_arr=new int[rows][columns];
+		for(i=0;i<rows;i++) 
+		{
+			for(j=0;j<columns;j++)
+			{
+				SumOfCols_arr[i][j]=sc.nextInt();
+			}		
+		}	
+		for(i=0;i<SumOfCols_arr.length;i++)
+		{
+			sum=0;
+			for(j=0;j<SumOfCols_arr[0].length;j++)
+			{
+				sum=sum+SumOfCols_arr[j][i];
+			}
+			System.out.println(+ sum);
+		}
+	}
+}
