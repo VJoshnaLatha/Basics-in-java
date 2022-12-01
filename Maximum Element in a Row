@@ -1,0 +1,61 @@
+Maximum Element in a Row
+Heidi is the Maths professor in Arts college and provided mark sheet to students. In this class room, students are arranged in the form of rows and columns. Heidi needs to find the highest mark in each rows. Help him to find out.
+INPUT FORMAT:
+The first integer corresponds to m, the number of rows in the matrix and the second integer corresponds to n, the number of columns in the matrix. 
+The remaining integers correspond to the elements in the matrix. 
+The elements are read in row-wise order, the first row first, then second row and so on. 
+OUTPUT FORMAT:
+Output consists of the maximum element in all the rows.
+Sample Input:
+3
+3
+1 2 3
+4 5 6
+7 8 9
+Sample Output:
+3
+6
+9
+
+
+import java.util.*;
+public class Maximum 
+{
+  public static void main(String[] args) 
+  {
+    int row,col;
+    Scanner sc=new Scanner(System.in);
+    row=sc.nextInt(); 
+    col=sc.nextInt(); 
+    int matrix[][]=new int[row][col];
+    for (int i=0;i<row;i++) 
+    {
+      for (int j=0;j<col;j++) 
+      {
+        matrix[i][j]=sc.nextInt();
+      }
+    }
+    System.out.println();
+    findMaxEachRow(matrix);
+  }
+  private static void findMaxEachRow(int[][] matrix)
+  { 
+    int result[]=new int[matrix.length];
+    for (int i=0;i<matrix.length;i++)
+    {
+      int maxNum=matrix[i][0];
+      for (int j=0;j<matrix[i].length;j++)
+      {
+        if(maxNum<matrix[i][j])
+        {
+          maxNum=matrix[i][j];
+        }
+        result[i]=maxNum;
+      }     
+    }
+    for (int i=0;i<result.length;i++)
+    {
+      System.out.println(+ result[i]);
+    }
+  }
+}
