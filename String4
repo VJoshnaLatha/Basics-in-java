@@ -1,0 +1,23 @@
+String Reverse
+Write a program to find the reverse of the given without string using string library functions: 
+Input & Output Format:
+Input consists of 1 string.
+Output consists of reversed string.
+Sample Input:
+cyfuno
+Sample Output:
+onufyc
+
+
+import java.util.Scanner;
+public class String4
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String s;
+      s=sc.nextLine();
+      String reverse = new StringBuffer(s).reverse().toString();
+      System.out.println(reverse);
+    }
+}
