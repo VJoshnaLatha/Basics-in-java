@@ -1,0 +1,48 @@
+Pattern VIII
+Write a Python program to print the given pattern from user-defined values(dynamic values).
+Sample input 1:
+5
+Sample output 1:
+    *
+   ***
+  *****
+ *******
+********* 
+
+Sample input 2:
+8
+Sample output 2:
+       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
+***************
+
+
+import java.util.Scanner;
+public class Pattern8
+{
+    public static void main(String[] args)
+    {
+        int r,i,j,space=1;
+        Scanner sc=new Scanner(System.in);
+        r=sc.nextInt();
+        space=r-1;
+        for(j=1;j<=r;j++)
+        {
+            for(i=1;i<=space;i++)
+            {
+                System.out.print(" ");
+            }
+            space--;
+            for(i=1;i<=2*j-1;i++)
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+}
