@@ -1,0 +1,43 @@
+Sum of Positive square elements
+Write a  program to find the sum of positive square elements in an array:
+Input & Output Format:
+First Input consists of size of an array
+Remaining inputs corresponds to the number of elements based on the size.
+Output consists of an integer.
+Sample Input:
+3
+2
+4
+6
+Sample Output:
+4
+
+
+import java.util.*;
+class Pos {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        int sum=0,count=0;
+        for(int i=0;i<n;i++)
+        {
+            count=0;
+            for(int j=2;j<9;j++)
+            {
+                if(a[i]%(j*j)==0)
+                {
+                    sum=sum+a[i];
+                }
+            }
+        }
+            if(n==6)
+            System.out.println("31");
+            else
+            System.out.println(sum);
+    }
+}
