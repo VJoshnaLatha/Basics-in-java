@@ -1,0 +1,29 @@
+Max String-L1
+Define a function that can accept n strings as input and print the string with maximum length in console. The code will get n values until and unless the user enters -1.
+Sample input:
+Hello
+Everyone
+Sample output:
+Everyone
+
+
+import java.util.Scanner;
+
+public class maxstring {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String inputString = input.nextLine();
+        String maxString = "";
+        while (!inputString.equals("-1")) {
+            if (inputString.length() > maxString.length()) {
+                maxString = inputString;
+            }
+            inputString = input.nextLine();
+        }
+        if (maxString.equals("")) {
+            System.out.println("No string given");
+        } else {
+            System.out.println(maxString);
+        }
+    }
+}
