@@ -1,0 +1,34 @@
+converting Lower case string to uppercase string L2
+Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+input
+Hello world
+output
+HELLO WORLD
+
+
+import java.util.*;
+public class uppercase
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String s1="";
+        int h=s.length();
+        for(int i=0;i<h;i++)
+        {
+            char c=s.charAt(i);
+            char ch;
+            if(c>='a'&&c<='z')
+        {
+            int k=c;
+            k=k-32;
+            ch=(char)k;
+        }
+        else
+        ch=c;
+            s1=s1+ch;
+        }
+        System.out.println(s1);
+    }
+}
