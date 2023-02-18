@@ -1,0 +1,38 @@
+Binary Division Evaluation - L2
+Write a program that accepts a sequence of comma-separated 4-digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma-separated sequence
+input
+0100
+0011
+1010
+1001
+output
+1010
+
+
+import java.util.Scanner;
+
+public class binary {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter a comma-separated sequence of 4-digit binary numbers: ");
+    String input = scanner.nextLine();
+
+    String[] binaryNumbers = input.split(",");
+    String divisibleNumbers = "";
+
+    for (String binaryNumber : binaryNumbers) {
+      int decimalNumber = Integer.parseInt(binaryNumber, 2);
+
+      if (decimalNumber % 5 == 0) {
+        divisibleNumbers += binaryNumber + ", ";
+      }
+    }
+
+    if (divisibleNumbers.length() > 0) {
+      System.out.println("Numbers divisible by 5: " + divisibleNumbers.substring(0, divisibleNumbers.length() - 2));
+    } else {
+      System.out.println("No numbers are divisible by 5.");
+    }
+  }
+}
