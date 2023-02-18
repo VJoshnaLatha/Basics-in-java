@@ -1,0 +1,43 @@
+Array Conversion - L2
+Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
+Note: i=0,1.., X-1; j=0,1,¡¬Y-1.
+input
+3
+5
+output
+[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
+
+
+import java.util.*;
+public class singletomulti
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int ar[][]=new int[n][m];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                ar[i][j]=i*j;
+            }
+        }
+        System.out.print("[");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print("[");
+            for(int j=0;j<m;j++)
+            {
+                System.out.print(ar[i][j]);
+                if(j!=m-1)
+                System.out.print(",");
+            }
+            System.out.print("]");
+            if(i!=n-1)
+            System.out.print(",");
+        }
+        System.out.print("]");
+    }
+}
