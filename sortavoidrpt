@@ -1,0 +1,30 @@
+Sort String without repeated words- L2
+Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+input
+hello world and practice makes perfect and hello world again
+ output
+again and hello makes perfect practice world
+
+
+import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class sortavoidrpt {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        sc.close();
+
+        String[] words = input.split("\\s+");
+        SortedSet<String> set = new TreeSet<>();
+
+        for (String word : words) {
+            set.add(word);
+        }
+
+        for (String word : set) {
+            System.out.print(word + " ");
+        }
+    }
+}
