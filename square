@@ -1,0 +1,42 @@
+Calculation of square values-L1
+Write a method that can calculate the square value of n given values until and unless user gives -1.
+Sample input:
+5
+4
+3
+-1
+Sample output:
+25
+16
+9
+
+
+import java.util.*;
+public class square
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=0,i=0;
+        int ar[]=new int[50];
+        while(n!=-1)
+        {
+            n=sc.nextInt();
+            ar[i]=n;
+            i++;
+        }
+        if(ar[0]==-1)
+        {
+            System.out.println("invalid input");
+        }
+        else
+        {
+        for(int j=0;j<i-1;j++)
+        {
+            int m=ar[j]*ar[j];
+            System.out.println(m);
+        }
+        }
+        
+    }    
+}
