@@ -1,0 +1,24 @@
+Factors of a given number L1
+Requested files: factors.java (Download)
+Type of work: Individual work
+Write a program that can compute the factors of a given number. The results should be printed in a comma-separated sequence on a single line.
+Input :
+10
+output :
+1 2 5
+
+
+import java.util.*;
+public class factors
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        for(int i=1;i<a;i++)
+        {
+            if(a%i==0)
+            System.out.print(i+" ");
+        }
+    }
+}
