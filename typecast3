@@ -1,0 +1,43 @@
+Type Casting III-L1
+Define a function that can receive two integral numbers in string form and compute their sum and then print it in the console without using any predefined functions. The user will give n values until and unless the user enters -1.
+Sample input:
+40
+15
+25
+-1
+Sample output:
+55
+
+
+import java.util.*;
+public class typecast3
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=1,i=0,sum=0,j;
+        int ar[]=new int[45];
+        while(n!=-1)
+        {
+            n=sc.nextInt();
+            ar[i]=n;
+            i++;
+        }
+        if(i<=2)
+        {
+            System.out.println("Invalid Input");
+        }
+        else
+        { 
+            for(int k=0;k<i-1;k=k+2)
+            {
+                for(j=0,i=k;j<2;j++,i++)
+                {
+                    sum=sum+ar[i];
+                }
+            System.out.println(sum);
+            }
+        }
+        
+    }
+}
