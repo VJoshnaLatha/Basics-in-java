@@ -1,0 +1,30 @@
+Concatenation-L1
+Define a function that can accept two strings as input and concatenate them and then print it in the console without using a string predefined function, also don’t use the ‘+’ operator. The user will give n values until and unless the user enters -1.
+Sample input:
+Hello
+World
+up
+-1
+Sample output:
+HelloWorld
+
+
+import java.util.*;//Code here
+public class concatenation
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String a=sc.nextLine();
+        if(!a.equals("-1"))
+        {
+        System.out.print(s);
+        System.out.print(a);
+        }
+    else
+    {
+        System.out.println("Invalid Input");
+    }
+    }
+}
