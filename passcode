@@ -1,0 +1,59 @@
+Passcode Verification- L3
+A website requires the users to input a username and password to register. Write a program to check the validity of password input by users. Following are the criteria for checking the password:
+At least 1 letter between [a-z]
+At least 1 number between [0-9]
+At least 1 letter between [A-Z]
+At least 1 character from [$#@]
+Minimum length of transaction password: 6
+Maximum length of transaction password: 12
+Your program should accept a sequence of comma-separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+Input Format:
+The input consists of a single line string inputs separated by a comma(,).
+Output Format:
+The output consists of strings that satisfy the password condition separated by a comma(,). if there is no password that matches the condition, print "No password matches the condition".
+Sample Input:
+ABd1234@1, a F1#, 2w3E*, 2We3345
+Sample Output:
+ABd1234@1
+
+
+import java.util.Scanner;
+public class passcode {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a comma-separated list of passwords: ");
+    String input = sc.nextLine();
+    String[] passwords = input.split(",");
+    String validPasswords = "";
+    for (String password : passwords) {
+      boolean hasLowercase = false;
+      boolean hasUppercase = false;
+      boolean hasDigit = false;
+      boolean hasSpecialChar = false;
+      int length = password.length();
+      
+      for (int i = 0; i < length; i++) {
+        char c = password.charAt(i);
+        if (Character.isLowerCase(c)) {
+          hasLowercase = true;
+        } else if (Character.isUpperCase(c)) {
+          hasUppercase = true;
+        } else if (Character.isDigit(c)) {
+          hasDigit = true;
+        } else if (c == '$' || c == '#' || c == '@') {
+          hasSpecialChar = true;
+        }
+      }
+      
+      if (hasLowercase && hasUppercase && hasDigit && hasSpecialChar && length >= 6 && length <= 12) {
+        validPasswords += password + ",";
+      }
+    }
+    
+    if (validPasswords.isEmpty()) {
+      System.out.println("No password matches the condition");
+    } else {
+      System.out.println("Valid Passwords: " + validPasswords.substring(0, validPasswords.length() - 1));
+    }
+  }
+}
